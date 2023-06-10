@@ -1,0 +1,49 @@
+<header>
+  <div class="logo inline">
+    <a href="/">
+      <img src="../../../assets/images/logo.png" alt="" class="inline"/>
+      <h1>Heart2heart</h1>
+    </a>
+  </div>
+  <div
+    class="menu_icon"
+    [class.menu_iconClass]="menu_icon_variable"
+    (click)="toggleMenuStatus()"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav>
+    <div class="menu" [class.menuClasse]="menuVariable">
+      <ul class="nav_links">
+        <li [class.active]="isRouteActive('movie')">
+          <a [routerLink]="['movie']">Movie</a>
+        </li>
+        <li [class.active]="isRouteActive('blogs')">
+          <a [routerLink]="['blogs']">Blogs</a>
+        </li>
+        <li [class.active]="isRouteActive('marketplace')">
+          <a [routerLink]="['marketplace']">Marketplace</a>
+        </li>
+        <li [class.active]="isRouteActive('about-us')">
+          <a [routerLink]="['about-us']">About us</a>
+        </li>
+
+        <li [class.active]="isRouteActive('login')" *ngIf="!isLoggedIn()">
+          <a [routerLink]="['/auth/login']"><button>Login</button></a>
+        </li>
+        <li
+          [class.active]="isRouteActive('/auth/signup')"
+          *ngIf="!isLoggedIn()"
+        >
+          <a [routerLink]="['/auth/signup']">Sign up</a>
+        </li>
+
+        <!-- TODO: STYLE THESE -->
+        <li *ngIf="isLoggedIn()">{{ getCurrentUser().username }}</li>
+        <li *ngIf="isLoggedIn()" (click)="signout()">Sign out</li>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Montserrat&display=swap');
+*
+{box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252A;
+    z-index: 100;
+}
+li, a, button, h1{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 120%;
+    color: #edf0f1;
+    text-decoration: none;
+    display: inline;
+}
+h1{
+    margin-left: 10px;
+    font-family: 'Alfa Slab One', cursive;
+}
+img {
+    width: 8%;
+    height: auto;
+  }
+/* header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px 10%;
+    height: 65%;
+} */
+header{
+  height: 70%;
+  padding: 2%
+}
+.logo{
+    cursor: pointer;
+    float: left;
+    width: 300px;
+    
+}
+nav{
+    order: 1;
+}
+.nav_links{
+    list-style: none;
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+   
+}
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover{
+    color: #0088a9;
+}
+
+button{
+    padding: 5px 20px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+button:hover{
+    background-image: radial-gradient(circle farthest-side, #fceabb, #f8b500);
+    color: black;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+
+
+    .nav_links li.active a {
+        color: #b807be;
+        
+      }
+      
+.logo {
+  margin-left: 50px;
+}
+
+.login, .signup {
+  float: right;
+}
+
+
+
+
+
+@media(max-width: 999px){
+  .menu{
+    position: fixed;
+    right: -280px;
+    top:64;
+    width: 280px;
+    height: 100%;
+    background: #222;
+    transition: 0.4s ease-in-out;
+    margin-top: 30px;
+  
+  }
+  .menu ul li {
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 10px 0 10px 26px;
+    border-bottom: 1px solid #312f2f;
+  
+  }
+  .menu_icon{
+    display: inline-block;
+    position: relative;
+    right: 0;
+    top: 20 px;
+  
+  }
+  
+  
+  .menu_icon span {
+    width: 32px;
+    height: 3px;
+    background: #ffffff;
+    display: block;
+    transition: 0.2s ease-in-out;
+  
+  }
+  .menu_icon span:nth-child(2) {
+    margin: 4px 0;
+  
+  }
+  .menu_iconClass span:nth-child(2){
+  
+  display: none;
+  }
+  
+  .menu_iconClass span:nth-child(1){
+  
+    transform: rotate(40deg);
+  }
+  
+  
+  .menu_iconClass span:nth-child(3){
+  
+    transform: rotate(-40deg);
+    margin-top: -3px;
+  }
+  
+  .menuClasse{
+  
+  right: 0;
+  transition: 0.4s ease-in-out;
+  
+  }
+  }
+
+  @media screen and (min-width: 1000px) and (max-width:1230px) {
+
+.nav_links{
+    list-style: none;
+    font-size: 73%;
+  
+}
+  }
