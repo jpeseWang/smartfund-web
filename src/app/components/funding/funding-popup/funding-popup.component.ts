@@ -1,5 +1,4 @@
 import { Component, Inject } from '@angular/core';
-import { ProductService } from 'src/app/services';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { MatDialogRef } from '@angular/material/dialog';

@@ -11,7 +11,13 @@ import { CreatePollPopupComponent } from './create-poll-popup/create-poll-popup.
 import { FundingPollComponent } from './funding-poll/funding-poll.component';
 import { CreateFundPopupComponent } from './create-fund-popup/create-fund-popup.component';
 @NgModule({
-  declarations: [FundingComponent, FundingPopupComponent, CreatePollPopupComponent, FundingPollComponent, CreateFundPopupComponent],
+  declarations: [
+    FundingComponent,
+    FundingPopupComponent,
+    CreatePollPopupComponent,
+    FundingPollComponent,
+    CreateFundPopupComponent,
+  ],
   imports: [
     CommonModule,
     MatDialogModule,

@@ -30,20 +30,6 @@
             >Donate us</a
           >
         </li>
-
-        <li [class.active]="isRouteActive('login')" *ngIf="!isLoggedIn()">
-          <button>Connect wallet</button>
-        </li>
-
-        <li
-          [class.active]="isRouteActive('/auth/signup')"
-          *ngIf="!isLoggedIn()"
-        >
-          <!-- TODO: STYLE THESE -->
-        </li>
-
-        <li *ngIf="isLoggedIn()">{{ getCurrentUser().username }}</li>
-        <li *ngIf="isLoggedIn()" (click)="signout()">Sign out</li>
       </ul>
     </div>
   </nav>

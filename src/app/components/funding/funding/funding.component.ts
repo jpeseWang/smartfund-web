@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../../services';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ProductPopupComponent } from '../../marketplace/product-popup/product-popup.component';
 import { FundingPopupComponent } from '../funding-popup/funding-popup.component';
 @Component({
   selector: 'app-funding',
@@ -26,16 +24,9 @@ export class FundingComponent implements OnInit {
     },
   ];
 
-  constructor(
-    private readonly productService: ProductService,
-    private dialog: MatDialog
-  ) {}
+  constructor(private dialog: MatDialog) {}
 
-  ngOnInit(): void {
-    this.productService.getAllProducts().subscribe((res) => {
-      this.products = [...res.data];
-    });
-  }
+  ngOnInit(): void {}
   openDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
