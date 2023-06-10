@@ -10,6 +10,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { CreatePollPopupComponent } from './create-poll-popup/create-poll-popup.component';
 import { FundingPollComponent } from './funding-poll/funding-poll.component';
 import { CreateFundPopupComponent } from './create-fund-popup/create-fund-popup.component';
+import { FundingRoutingModule } from './funding.routing';
+
 @NgModule({
   declarations: [
     FundingComponent,
@@ -20,6 +22,7 @@ import { CreateFundPopupComponent } from './create-fund-popup/create-fund-popup.
   ],
   imports: [
     CommonModule,
+    FundingRoutingModule,
     MatDialogModule,
     MatDatepickerModule,
     MatFormFieldModule,
