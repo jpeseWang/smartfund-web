@@ -1,71 +1,75 @@
 <div class="nft-card">
-  <div *ngFor="let poll of this.fundingPolls">
-    <p>{{ poll.title }}</p>
-    <p>{{ poll.description }}</p>
-    <p>{{ poll.milestone }}</p>
-    <p>{{ poll.creatorId }}</p>
-  </div>
   <a
     ><button
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded items-end my-3"
-      (click)="openDialog()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded items-end my-3 ml-auto"
+      (click)="openPoll()"
     >
       New
     </button></a
   >
-  <div class="nft-card nft-card--locked">
-    <div class="nft-card--header">
-      <div class="nft-user">
-        <img
-          src="https://cdn2.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/d.jpg?width=720"
-        />
-        Astro Man
-        <span>@phe.mestre</span>
-      </div>
-    </div>
 
-    <div class="nft-card--content">
-      <div class="nft-action">
-        <span>35 <i class="far fa-comment"></i></span>
-        <span>1.8K <i class="far fa-heart"></i></span>
-      </div>
+  <div class="nft-card">
+    <div *ngFor="let poll of this.fundingPolls">
+      <p></p>
+      <div class="nft-card nft-card--locked">
+        <div class="nft-card--header">
+          <div class="nft-user">
+            <img
+              src="https://cdn2.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/d.jpg?width=720"
+            />
+            <p>{{ poll.title }}</p>
+            <span>Creator ID: {{ poll.creatorId | slice : 0 : 12 }} </span>
+          </div>
+        </div>
 
-      <img
-        src="https://i.pinimg.com/originals/4a/e9/e5/4ae9e55b5b2d8730017cb33615b56609.jpg"
-      />
+        <div class="nft-card--content">
+          <div class="nft-action">
+            <span> <i class="far fa-comment"></i></span>
+            <span> <i class="far fa-heart"></i></span>
+          </div>
 
-      <div class="nft-qrcode">
-        001
-        <span>/250</span>
-        <i class="fas fa-qrcode"></i>
-      </div>
+          <img
+            src="https://i.pinimg.com/originals/4a/e9/e5/4ae9e55b5b2d8730017cb33615b56609.jpg"
+          />
 
-      <div class="nft-description">
-        <p>
-          Private photo’s description goes here so subscribers to know what
-          they’re paying for.
-        </p>
-      </div>
+          <div class="nft-qrcode">
+            001
+            <span>/250</span>
+            <i class="fas fa-qrcode"></i>
+          </div>
 
-      <div class="nft-unlock">
-        <input type="button" class="btn btn--primary" value="Unlock" />
+          <div class="nft-description text-white">
+            <p>{{ poll.description }}</p>
+          </div>
+
+          <div class="nft-unlock">
+            <input
+              type="button"
+              class="btn btn--primary"
+              value="FUND"
+              (click)="openFund()"
+            />
+          </div>
+        </div>
+        <div class="nft-card--footer">
+          <div class="nft-price">
+            <!-- <span>($803.39)</span> -->
+            <img
+              src="https://cryptologos.cc/logos/solana-sol-logo.png?v=025"
+              alt=""
+              width="10%"
+              height="10%"
+            />
+            <p>{{ poll.milestone }} SOL</p>
+          </div>
+          <div class="nft-time">
+            <span
+              ><i class="far fa-clock"></i> Deadline: {{ poll.deadline }}</span
+            >
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="nft-card--footer">
-      <div class="nft-price">
-        <span>($803.39)</span>
-        <img
-          src="https://cryptologos.cc/logos/solana-sol-logo.png?v=025"
-          alt=""
-          width="10%"
-          height="10%"
-        />
-        0.23 SOL
-      </div>
-      <div class="nft-time">
-        <span><i class="far fa-clock"></i> 3 days left</span>
-      </div>
+      <div class="nft-profile--footer"></div>
     </div>
   </div>
-  <div class="nft-profile--footer"></div>
 </div>

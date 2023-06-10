@@ -38,28 +38,29 @@
     <label
       for="title"
       class="block text-base font-medium leading-6 text-gray-900"
-      >Deadline</label
+      >Your recommend Deadline</label
     >
-    <!-- <input
-      matInput
-      [matDatepicker]="picker"
-      (dateChange)="dateChanged($event)"
-    />
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker> -->
 
-    <input matInput [matDatepicker]="picker" />
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date" />
+        <input matEndDate placeholder="End date" />
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
   </div>
 
   <div class="mb-4">
     <label
       for="content"
       class="block text-base font-medium leading-6 text-gray-900"
-      >Content</label
+      >Comment</label
     >
     <textarea
       id="content"
