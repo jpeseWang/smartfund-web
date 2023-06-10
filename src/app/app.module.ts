@@ -10,7 +10,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
-import { MovieComponent } from './components/movie/movie.component';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthInterceptor } from './interceptors';
 import { FundingPopupComponent } from './components/funding-popup/funding-popup.component';
@@ -22,7 +22,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    MovieComponent,
     FundingPopupComponent,
   ],
   imports: [
