@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { HttpClient } from '@angular/common/http';
 import { MatDialogRef } from '@angular/material/dialog';
+import { FundingService } from '../../../services';
 
 @Component({
   selector: 'app-create-poll-popup',
@@ -13,9 +13,11 @@ export class CreatePollPopupComponent {
   content: string;
   responseStatus: number | null = null;
 
+  deadline = '';
+
   constructor(
     public dialogRef: MatDialogRef<CreatePollPopupComponent>,
-    private http: HttpClient,
+    private fundingService: FundingService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.title = data.title.text;
@@ -23,6 +25,19 @@ export class CreatePollPopupComponent {
   }
 
   dateChanged($event: any) {
-    console.log($event.target.value.toISOString());
+    this.deadline = $event.target.value.toISOString();
+  }
+
+  createPoll(title: string, milestone: string, description: string) {
+    this.fundingService
+      .createNewPoll({
+        title,
+        description,
+        milestone: Number(milestone),
+        deadline: new Date(this.deadline),
+      })
+      .subscribe((res) => {
+        window.location.href = res.data.payment_url;
+      });
   }
 }

@@ -26,8 +26,6 @@ export class FundingComponent implements OnInit {
 
   ngOnInit(): void {
     this.fundingService.getAllPolls().subscribe((res) => {
-      console.log(res);
-
       this.fundingPolls = res.data;
     });
   }
