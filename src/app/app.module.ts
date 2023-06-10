@@ -13,17 +13,11 @@ import { HomeComponent } from './components/home/home.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthInterceptor } from './interceptors';
-import { FundingPopupComponent } from './components/funding-popup/funding-popup.component';
+
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    NavbarComponent,
-    FooterComponent,
-    FundingPopupComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

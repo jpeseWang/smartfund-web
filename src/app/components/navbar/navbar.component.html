@@ -18,11 +18,11 @@
     <div class="menu" [class.menuClasse]="menuVariable">
       <ul class="nav_links">
         <li [class.active]="isRouteActive('home')">
-          <a [routerLink]="['home']">Home</a>
+          <a [routerLink]="['/']">Home</a>
         </li>
 
-        <li [class.active]="isRouteActive('marketplace')">
-          <a [routerLink]="['marketplace']">Funding</a>
+        <li [class.active]="isRouteActive('funding')">
+          <a [routerLink]="['funding']">Funding</a>
         </li>
 
         <li [class.active]="isRouteActive('donate us')">

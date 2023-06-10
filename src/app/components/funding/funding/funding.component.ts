@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../services';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ProductPopupComponent } from '../product-popup/product-popup.component';
-
+import { ProductPopupComponent } from '../../marketplace/product-popup/product-popup.component';
+import { FundingPopupComponent } from '../funding-popup/funding-popup.component';
 @Component({
-  selector: 'app-marketplace',
-  templateUrl: './marketplace.component.html',
+  selector: 'app-funding',
+  templateUrl: './funding.component.html',
   styleUrls: [
-    './marketplace.component.scss',
-    './mk1.component.scss',
-    './mk2.component.scss',
-    './mk3.component.scss',
-    './mk4.component.scss',
+    './funding.component.scss',
+    './child1.scss',
+    './child2.scss',
+    './child3.scss',
   ],
 })
-export class MarketplaceComponent implements OnInit {
+export class FundingComponent implements OnInit {
   activeTab: string = 'shop';
   products: any[] = [];
 
@@ -52,7 +51,7 @@ export class MarketplaceComponent implements OnInit {
       },
     };
 
-    this.dialog.open(ProductPopupComponent, dialogConfig);
+    this.dialog.open(FundingPopupComponent, dialogConfig);
   }
 
   numberWithCommas(x: string) {

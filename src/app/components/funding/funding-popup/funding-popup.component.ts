@@ -6,17 +6,17 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatDateRangeInput } from '@angular/material/datepicker';
 
 @Component({
-  selector: 'app-product-popup',
-  templateUrl: './product-popup.component.html',
-  styleUrls: ['./product-popup.component.css'],
+  selector: 'app-funding-popup',
+  templateUrl: './funding-popup.component.html',
+  styleUrls: ['./funding-popup.component.css'],
 })
-export class ProductPopupComponent {
+export class FundingPopupComponent {
   title: string;
   content: string;
   responseStatus: number | null = null;
 
   constructor(
-    public dialogRef: MatDialogRef<ProductPopupComponent>,
+    public dialogRef: MatDialogRef<FundingPopupComponent>,
     private http: HttpClient,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
