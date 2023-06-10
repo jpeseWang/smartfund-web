@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { FundingPopupComponent } from '../funding-popup/funding-popup.component';
+import { FundingService } from '../../../services';
 import { CreatePollPopupComponent } from '../create-poll-popup/create-poll-popup.component';
+
 @Component({
   selector: 'app-funding',
   templateUrl: './funding.component.html',
@@ -16,18 +17,21 @@ export class FundingComponent implements OnInit {
   activeTab: string = 'shop';
   products: any[] = [];
 
-  fundingPolls: any[] = [
-    {
-      title: 'Environment',
-      description: 'A project to help orphans',
-      milestone: 21,
-      deadline: 23 / 8 / 2023,
-    },
-  ];
+  fundingPolls: any[] = [];
 
-  constructor(private dialog: MatDialog) {}
+  constructor(
+    private dialog: MatDialog,
+    private fundingService: FundingService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fundingService.getAllPolls().subscribe((res) => {
+      console.log(res);
+
+      this.fundingPolls = res.data;
+    });
+  }
+
   openDialog() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;

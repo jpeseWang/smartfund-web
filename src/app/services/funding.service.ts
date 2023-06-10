@@ -4,7 +4,7 @@ import { ApiConfigService } from './api-config.service';
 @Injectable({
   providedIn: 'root',
 })
-export class Funding {
+export class FundingService {
   constructor(private readonly apiConfigService: ApiConfigService) {}
 
   getAllPolls() {

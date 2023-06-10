@@ -1,16 +1,9 @@
 <div class="nft-card">
-  <div class="horizontal-tabs">
-    <a href="#">All</a>
-
-    <a href="#">My project</a>
-
-    <a
-      href="#"
-      style="color: #ea4c89"
-      (click)="setActiveTab('integrations')"
-      [class.active]="activeTab === 'integrations'"
-      >Donated</a
-    >
+  <div *ngFor="let poll of this.fundingPolls">
+    <p>{{ poll.title }}</p>
+    <p>{{ poll.description }}</p>
+    <p>{{ poll.milestone }}</p>
+    <p>{{ poll.creatorId }}</p>
   </div>
   <a
     ><button
