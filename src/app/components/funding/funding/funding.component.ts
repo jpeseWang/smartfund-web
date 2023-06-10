@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { FundingPopupComponent } from '../funding-popup/funding-popup.component';
+import { CreatePollPopupComponent } from '../create-poll-popup/create-poll-popup.component';
 @Component({
   selector: 'app-funding',
   templateUrl: './funding.component.html',
@@ -42,7 +43,7 @@ export class FundingComponent implements OnInit {
       },
     };
 
-    this.dialog.open(FundingPopupComponent, dialogConfig);
+    this.dialog.open(CreatePollPopupComponent, dialogConfig);
   }
 
   numberWithCommas(x: string) {
