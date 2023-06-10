@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { FundingComponent } from './components/funding/funding/funding.component';
 
 const routes: Routes = [
   {
@@ -9,10 +8,12 @@ const routes: Routes = [
     pathMatch: 'full',
     component: HomeComponent,
   },
-
   {
     path: 'funding',
-    component: FundingComponent,
+    loadChildren: () =>
+      import('./components/funding/funding.module').then(
+        (m) => m.FundingModule
+      ),
   },
 ];
 

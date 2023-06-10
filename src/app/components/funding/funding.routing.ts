@@ -4,7 +4,7 @@ import { FundingComponent } from './funding/funding.component';
 
 const routes: Route[] = [
   {
-    path: '/funding',
+    path: '',
     component: FundingComponent,
   },
 ];

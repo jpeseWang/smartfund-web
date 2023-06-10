@@ -7,8 +7,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerInput } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { CreatePollPopupComponent } from './create-poll-popup/create-poll-popup.component';
+import { FundingPollComponent } from './funding-poll/funding-poll.component';
+import { CreateFundPopupComponent } from './create-fund-popup/create-fund-popup.component';
 @NgModule({
-  declarations: [FundingComponent, FundingPopupComponent],
+  declarations: [FundingComponent, FundingPopupComponent, CreatePollPopupComponent, FundingPollComponent, CreateFundPopupComponent],
   imports: [
     CommonModule,
     MatDialogModule,
@@ -17,4 +20,4 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatNativeDateModule,
   ],
 })
-export class MarketplaceModule {}
+export class FundingModule {}
