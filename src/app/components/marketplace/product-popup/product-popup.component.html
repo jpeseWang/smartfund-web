@@ -1,30 +1,114 @@
-<h2 mat-dialog-title></h2>
+<h2
+  mat-dialog-title
+  class="text-indigo-600 text-xl font-bold {{ data.title.color }}"
+>
+  {{ data.title.text }}
+</h2>
 
-<mat-dialog-content> Hi </mat-dialog-content>
-
-<mat-dialog-actions>
-  <div class="inline-block">
-    <button
-      class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+<div mat-dialog-content>
+  <div class="mb-4">
+    <label
+      for="title"
+      class="block text-base font-medium leading-6 text-gray-900"
+      >Title</label
     >
-      Add
+    <input
+      id="title"
+      matInput
+      placeholder="Enter a title"
+      required
+      class="w-full p-2 border border-gray-300 rounded px-3 text-gray-500 sm:text-sm"
+    />
+  </div>
+  <div class="mb-4">
+    <label
+      for="title"
+      class="block text-base font-medium leading-6 text-gray-900"
+      >Budget estimate</label
+    >
+    <input
+      id="title"
+      matInput
+      placeholder="Enter your $$"
+      required
+      class="w-full p-2 border border-gray-300 rounded px-3 text-gray-500 sm:text-sm"
+    />
+  </div>
+  <div class="mb-4">
+    <label
+      for="title"
+      class="block text-base font-medium leading-6 text-gray-900"
+      >Time to finish</label
+    >
+    <!-- <input
+      matInput
+      [matDatepicker]="picker"
+      (dateChange)="dateChanged($event)"
+    />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker> -->
+
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input
+          matStartDate
+          placeholder="Start date"
+          (dateChange)="dateChanged($event)"
+        />
+        <input
+          matEndDate
+          placeholder="End date"
+          (dateChange)="dateChanged($event)"
+        />
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+
+  <div class="mb-4">
+    <label
+      for="content"
+      class="block text-base font-medium leading-6 text-gray-900"
+      >Content</label
+    >
+    <textarea
+      id="content"
+      name="content"
+      placeholder="Enter the content"
+      rows="4"
+      required
+      class="w-full p-2 border border-gray-300 rounded px-3 text-gray-500 sm:text-sm"
+    ></textarea>
+  </div>
+
+  <p *ngIf="responseStatus !== null" class="text-center">
+    Response Status: {{ responseStatus }}
+  </p>
+</div>
+
+<div mat-dialog-actions class="flex justify-end">
+  <div class="ml-auto">
+    <button
+      mat-button
+      [mat-dialog-close]="true"
+      class="px-4 py-2 text-sm font-medium leading-5 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+    >
+      Cancel
     </button>
     <button
-      class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+      mat-raised-button
+      color="primary"
+      [disabled]="!title || !content"
+      class="inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium leading-5 text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
     >
-      Remove
+      Create
     </button>
   </div>
-  <button
-    class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-    [mat-dialog-close]="true"
-  >
-    Close
-  </button>
-  <button
-    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-    [mat-dialog-close]="true"
-  >
-    Done
-  </button>
-</mat-dialog-actions>
+</div>

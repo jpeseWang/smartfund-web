@@ -1,128 +1,70 @@
-<!-- <div *ngFor="let product of products">
-  {{ product.type }}
-</div> -->
+<div class="nft-card">
+  <div class="horizontal-tabs">
+    <a href="#">All</a>
 
-<main class="main">
-  <div class="responsive-wrapper">
-    <div class="main-header">
-      <h1>Anything you want is here!</h1>
-      <div class="search">
-        <input
-          type="text"
-          placeholder="Search"
-          class="nav-v2-search__input bg-gray-100 rounded-xl inline"
+    <a href="#">My project</a>
+
+    <a
+      href="#"
+      style="color: #ea4c89"
+      (click)="setActiveTab('integrations')"
+      [class.active]="activeTab === 'integrations'"
+      >Donated</a
+    >
+  </div>
+  <div class="nft-card nft-card--locked">
+    <div class="nft-card--header">
+      <div class="nft-user">
+        <img
+          src="https://cdn2.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/d.jpg?width=720"
         />
-
-        <button type="submit">
-          <i class="ph-magnifying-glass-bold"></i>
-        </button>
+        Astro Man
+        <span>@phe.mestre</span>
       </div>
     </div>
-    <div class="horizontal-tabs">
-      <a
-        href="#"
-        (click)="setActiveTab('details')"
-        [class.active]="activeTab === 'details'"
-        >Lifestyle</a
-      >
-      <a
-        href="#"
-        (click)="setActiveTab('team')"
-        [class.active]="activeTab === 'team'"
-        >Jordan</a
-      >
-      <a
-        href="#"
-        (click)="setActiveTab('plan')"
-        [class.active]="activeTab === 'plan'"
-        >Running</a
-      >
-      <a
-        href="#"
-        (click)="setActiveTab('billing')"
-        [class.active]="activeTab === 'billing'"
-        >Basketball</a
-      >
-      <a
-        href="#"
-        (click)="setActiveTab('shop')"
-        [class.active]="activeTab === 'shop'"
-        >Football</a
-      >
 
-      <a
-        href="#"
-        style="color: #ea4c89"
-        (click)="setActiveTab('integrations')"
-        [class.active]="activeTab === 'integrations'"
-        >Go Pro</a
-      >
-    </div>
-
-    <div class="content">
-      <div class="content-panel">
-        <div
-          class="vertical-tabs px-0 bg-slate-100 rounded rounded-xl w-60 h-auto flex"
-        >
-          <h2 class="bold text-xl text-center px-3 py-4">Summary</h2>
-          <div class="cart py-3 text-gray-500">
-            <p class="border-b-2 border-solid px-3 py-3">Items:</p>
-            <h3 class="px-3 py-3">Total:</h3>
-          </div>
-          <button
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full w-40 justify-center"
-          >
-            Checkout
-          </button>
-        </div>
+    <div class="nft-card--content">
+      <div class="nft-action">
+        <span>35 <i class="far fa-comment"></i></span>
+        <span>1.8K <i class="far fa-heart"></i></span>
       </div>
-      <div class="content-main">
-        <div class="card-grid">
-          <div *ngFor="let product of products">
-            <article class="card">
-              <div class="card-header">
-                <img src="{{ product.imageUrl }}" />
 
-                <label class="toggle">
-                  <input type="checkbox" checked />
-                  <span></span>
-                </label>
-              </div>
-              <div class="card-body">
-                <h2 class="bold text-lg">{{ product.name }}</h2>
-                <p>{{ product.type }} Shoes</p>
-                <a href="#" class="price font-medium"
-                  >{{ numberWithCommas(product.price) }},000 VND</a
-                >
-              </div>
-              <div class="card-footer ml-1 flex">
-                <button
-                  class="bg-white hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-200 rounded shadow mr-auto"
-                  (click)="openDialog()"
-                >
-                  Details
-                </button>
-                <button>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="w-6 h-6 ml-auto"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </article>
-          </div>
-        </div>
+      <img
+        src="https://i.pinimg.com/originals/4a/e9/e5/4ae9e55b5b2d8730017cb33615b56609.jpg"
+      />
+
+      <div class="nft-qrcode">
+        001
+        <span>/250</span>
+        <i class="fas fa-qrcode"></i>
+      </div>
+
+      <div class="nft-description">
+        <p>
+          Private photo’s description goes here so subscribers to know what
+          they’re paying for.
+        </p>
+      </div>
+
+      <div class="nft-unlock">
+        <input type="button" class="btn btn--primary" value="Unlock" />
+      </div>
+    </div>
+    <div class="nft-card--footer">
+      <div class="nft-price">
+        <span>($803.39)</span>
+        <img
+          src="https://cryptologos.cc/logos/solana-sol-logo.png?v=025"
+          alt=""
+          width="10%"
+          height="10%"
+        />
+        0.23 SOL
+      </div>
+      <div class="nft-time">
+        <span><i class="far fa-clock"></i> 3 days left</span>
       </div>
     </div>
   </div>
-</main>
+  <div class="nft-profile--footer"></div>
+</div>

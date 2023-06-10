@@ -1,8 +1,8 @@
 <header>
-  <div class="logo inline">
+  <div class="logo inline flex-start">
     <a href="/">
-      <img src="../../../assets/images/logo.png" alt="" class="inline"/>
-      <h1>Heart2heart</h1>
+      <img src="../../../assets/images/logo.png" alt="" class="inline" />
+      <h1>Smart Funding</h1>
     </a>
   </div>
   <div
@@ -17,30 +17,31 @@
   <nav>
     <div class="menu" [class.menuClasse]="menuVariable">
       <ul class="nav_links">
-        <li [class.active]="isRouteActive('movie')">
-          <a [routerLink]="['movie']">Movie</a>
+        <li [class.active]="isRouteActive('home')">
+          <a [routerLink]="['home']">Home</a>
         </li>
-        <li [class.active]="isRouteActive('blogs')">
-          <a [routerLink]="['blogs']">Blogs</a>
-        </li>
+
         <li [class.active]="isRouteActive('marketplace')">
-          <a [routerLink]="['marketplace']">Marketplace</a>
+          <a [routerLink]="['marketplace']">Funding</a>
         </li>
-        <li [class.active]="isRouteActive('about-us')">
-          <a [routerLink]="['about-us']">About us</a>
+
+        <li [class.active]="isRouteActive('donate us')">
+          <a href="https://candypay.fun/pay/ssPX9NaAXKP8xdXCAJxEUF"
+            >Donate us</a
+          >
         </li>
 
         <li [class.active]="isRouteActive('login')" *ngIf="!isLoggedIn()">
-          <a [routerLink]="['/auth/login']"><button>Login</button></a>
+          <button (click)="connectWallet()">Connect wallet</button>
         </li>
+
         <li
           [class.active]="isRouteActive('/auth/signup')"
           *ngIf="!isLoggedIn()"
         >
-          <a [routerLink]="['/auth/signup']">Sign up</a>
+          <!-- TODO: STYLE THESE -->
         </li>
 
-        <!-- TODO: STYLE THESE -->
         <li *ngIf="isLoggedIn()">{{ getCurrentUser().username }}</li>
         <li *ngIf="isLoggedIn()" (click)="signout()">Sign out</li>
       </ul>

@@ -24,9 +24,18 @@ export class MarketplaceComponent implements OnInit {
   }
   openDialog() {
     const dialogConfig = new MatDialogConfig();
-
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.width = '500px';
+
+    dialogConfig.data = {
+      title: {
+        text: 'Enter your Funding Details',
+      },
+      content: {
+        text: 'Please provide the details for your project.',
+      },
+    };
 
     this.dialog.open(ProductPopupComponent, dialogConfig);
   }

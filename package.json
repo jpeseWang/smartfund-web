@@ -25,6 +25,8 @@
     "@fortawesome/angular-fontawesome": "^0.13.0",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@solana/wallet-adapter-phantom": "^0.9.22",
+    "@solana/web3.js": "^1.77.3",
     "contentful": "^10.2.1",
     "font-awesome": "^4.7.0",
     "moment": "^2.29.4",

@@ -1,24 +1,715 @@
-<div class="container">
-  <iframe
-    class="background-clip"
-    width="50%"
-    height="55%"
-    src="https://www.youtube.com/embed/Wh2kwpnQu6c"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
+<!-- HeroSection-->
+<div class="relative isolate overflow-hidden pt-14">
+  <img
+    src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1612&q=80"
+    alt=""
+    class="absolute inset-0 -z-10 h-full w-full object-cover"
+  />
+  <div
+    class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+  >
+    <svg
+      class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
+      viewBox="0 0 1155 678"
+    >
+      <path
+        fill="url(#45de2b6b-92d5-4d68-a6a0-9b9b2abad533)"
+        fill-opacity=".2"
+        d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+      />
+      <defs>
+        <linearGradient
+          id="45de2b6b-92d5-4d68-a6a0-9b9b2abad533"
+          x1="1155.49"
+          x2="-78.208"
+          y1=".177"
+          y2="474.645"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#9089FC" />
+          <stop offset="1" stop-color="#FF80B5" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+    <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+      <div
+        class="relative rounded-full py-1 px-3 text-sm leading-6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20"
+      >
+        Announcing our next round of funding.
+        <a href="#" class="font-semibold text-white"
+          ><span class="absolute inset-0" aria-hidden="true"></span>Read more
+          <span aria-hidden="true">&rarr;</span></a
+        >
+      </div>
+    </div>
+    <div class="text-center">
+      <h1
+        class="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+        style="color: white; line-height: 40px"
+      >
+        Better way to build your own Website
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-gray-300">
+        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem
+        cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+      </p>
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+        <a
+          [routerLink]="['/page']"
+          class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+          >Get started</a
+        >
+        <a href="#" class="text-sm font-semibold leading-6 text-white"
+          >Learn more <span aria-hidden="true">→</span></a
+        >
+      </div>
+    </div>
+  </div>
+  <div
+    class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+  >
+    <svg
+      class="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
+      viewBox="0 0 1155 678"
+    >
+      <path
+        fill="url(#ecb5b0c9-546c-4772-8c71-4d3f06d544bc)"
+        fill-opacity=".2"
+        d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+      />
+      <defs>
+        <linearGradient
+          id="ecb5b0c9-546c-4772-8c71-4d3f06d544bc"
+          x1="1155.49"
+          x2="-78.208"
+          y1=".177"
+          y2="474.645"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#9089FC" />
+          <stop offset="1" stop-color="#FF80B5" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</div>
 
-  <div class="content">
-    <h1>
-      TOGETHER
-      <br />
-      WE STOP
-      <br />
-      BULLYING!
-    </h1>
-    <p class="italic">{{ quote }}</p>
-    <button class="hover:bg-sky-700"><a [routerLink]="'movie'">Watch our movie!</a></button>
+<!-- Content-->
+<div
+  class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"
+>
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <svg
+      class="absolute top-0 left-[max(50%,25rem)] h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+      aria-hidden="true"
+    >
+      <defs>
+        <pattern
+          id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+          width="200"
+          height="200"
+          x="50%"
+          y="-1"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M100 200V.5M.5 .5H200" fill="none" />
+        </pattern>
+      </defs>
+      <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+        <path
+          d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+          stroke-width="0"
+        />
+      </svg>
+      <rect
+        width="100%"
+        height="100%"
+        stroke-width="0"
+        fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+      />
+    </svg>
+  </div>
+  <div
+    class="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10"
+  >
+    <div
+      class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+    >
+      <div class="lg:pr-4">
+        <div class="lg:max-w-lg">
+          <p class="text-base font-semibold leading-7 text-indigo-600">
+            Deploy faster
+          </p>
+          <h1
+            class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            A better workflow
+          </h1>
+          <p class="mt-6 text-xl leading-8 text-gray-700">
+            Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At
+            arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae
+            feugiat egestas.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
+    >
+      <img
+        class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+        src="../../../assets/images/homeImage.png"
+        alt=""
+      />
+    </div>
+    <div
+      class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+    >
+      <div class="lg:pr-4">
+        <div class="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
+          <p>
+            Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus
+            enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor
+            praesent donec est. Odio penatibus risus viverra tellus varius sit
+            neque erat velit. Faucibus commodo massa rhoncus, volutpat.
+            Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae
+            sed turpis id.
+          </p>
+          <ul role="list" class="mt-8 space-y-8 text-gray-600">
+            <li class="flex gap-x-3">
+              <svg
+                class="mt-1 h-5 w-5 flex-none text-indigo-600"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span
+                ><strong class="font-semibold text-gray-900"
+                  >Push to deploy.</strong
+                >
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Maiores impedit perferendis suscipit eaque, iste dolor
+                cupiditate blanditiis ratione.</span
+              >
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                class="mt-1 h-5 w-5 flex-none text-indigo-600"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span
+                ><strong class="font-semibold text-gray-900"
+                  >SSL certificates.</strong
+                >
+                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+                lorem cupidatat commodo.</span
+              >
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                class="mt-1 h-5 w-5 flex-none text-indigo-600"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4.632 3.533A2 2 0 016.577 2h6.846a2 2 0 011.945 1.533l1.976 8.234A3.489 3.489 0 0016 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  d="M4 13a2 2 0 100 4h12a2 2 0 100-4H4zm11.24 2a.75.75 0 01.75-.75H16a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75h-.01a.75.75 0 01-.75-.75V15zm-2.25-.75a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75h-.01z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <span
+                ><strong class="font-semibold text-gray-900"
+                  >Database backups.</strong
+                >
+                Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
+                Et magna sit morbi lobortis.</span
+              >
+            </li>
+          </ul>
+          <p class="mt-8">
+            Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis
+            odio id et. Id blandit molestie auctor fermentum dignissim. Lacus
+            diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices
+            hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem
+            vel integer orci.
+          </p>
+          <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+            No server? No problem.
+          </h2>
+          <p class="mt-6">
+            Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat
+            in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum
+            mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
+            tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi.
+            Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis
+            diam.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Pricing-->
+<div class="bg-gray-900 py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-base font-semibold leading-7 text-indigo-400">Pricing</h2>
+      <p class="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+        Pricing plans for teams of&nbsp;all&nbsp;sizes
+      </p>
+    </div>
+
+    <div class="mt-16 flex justify-center">
+      <fieldset
+        class="grid grid-cols-2 gap-x-1 rounded-full bg-white/5 p-1 text-center text-xs font-semibold leading-5 text-white"
+      >
+        <legend class="sr-only">Payment frequency</legend>
+
+        <!-- Checked: "bg-indigo-500" -->
+        <label class="cursor-pointer rounded-full py-1 px-2.5">
+          <input
+            type="radio"
+            name="frequency"
+            value="monthly"
+            class="sr-only"
+          />
+          <span>Monthly</span>
+        </label>
+
+        <!-- Checked: "bg-indigo-500" -->
+        <label class="cursor-pointer rounded-full py-1 px-2.5">
+          <input
+            type="radio"
+            name="frequency"
+            value="annually"
+            class="sr-only"
+          />
+          <span>Annually</span>
+        </label>
+      </fieldset>
+    </div>
+    <div
+      class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+    >
+      <div class="rounded-3xl p-8 xl:p-10 ring-1 ring-white/10">
+        <div class="flex items-center justify-between gap-x-4">
+          <h3
+            id="tier-freelancer"
+            class="text-lg font-semibold leading-8 text-white"
+          >
+            Freelancer
+          </h3>
+        </div>
+        <p class="mt-4 text-sm leading-6 text-gray-300">
+          The essentials to provide your best work for clients.
+        </p>
+        <p class="mt-6 flex items-baseline gap-x-1">
+          <!-- Price, update based on frequency toggle state -->
+          <span class="text-4xl font-bold tracking-tight text-white">$15</span>
+          <!-- Payment frequency, update based on frequency toggle state -->
+          <span class="text-sm font-semibold leading-6 text-gray-300"
+            >/month</span
+          >
+        </p>
+        <a
+          href="#"
+          aria-describedby="tier-freelancer"
+          class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white"
+          >Buy plan</a
+        >
+        <ul
+          role="list"
+          class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10"
+        >
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            5 products
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Up to 1,000 subscribers
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Basic analytics
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            48-hour support response time
+          </li>
+        </ul>
+      </div>
+
+      <div class="rounded-3xl p-8 xl:p-10 bg-white/5 ring-2 ring-indigo-500">
+        <div class="flex items-center justify-between gap-x-4">
+          <h3
+            id="tier-startup"
+            class="text-lg font-semibold leading-8 text-white"
+          >
+            Startup
+          </h3>
+
+          <p
+            class="rounded-full bg-indigo-500 py-1 px-2.5 text-xs font-semibold leading-5 text-white"
+          >
+            Most popular
+          </p>
+        </div>
+        <p class="mt-4 text-sm leading-6 text-gray-300">
+          A plan that scales with your rapidly growing business.
+        </p>
+        <p class="mt-6 flex items-baseline gap-x-1">
+          <!-- Price, update based on frequency toggle state -->
+          <span class="text-4xl font-bold tracking-tight text-white">$30</span>
+          <!-- Payment frequency, update based on frequency toggle state -->
+          <span class="text-sm font-semibold leading-6 text-gray-300"
+            >/month</span
+          >
+        </p>
+        <a
+          href="#"
+          aria-describedby="tier-startup"
+          class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-indigo-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-indigo-500"
+          >Buy plan</a
+        >
+        <ul
+          role="list"
+          class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10"
+        >
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            25 products
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Up to 10,000 subscribers
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Advanced analytics
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            24-hour support response time
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Marketing automations
+          </li>
+        </ul>
+      </div>
+
+      <div class="rounded-3xl p-8 xl:p-10 ring-1 ring-white/10">
+        <div class="flex items-center justify-between gap-x-4">
+          <h3
+            id="tier-enterprise"
+            class="text-lg font-semibold leading-8 text-white"
+          >
+            Enterprise
+          </h3>
+        </div>
+        <p class="mt-4 text-sm leading-6 text-gray-300">
+          Dedicated support and infrastructure for your company.
+        </p>
+        <p class="mt-6 flex items-baseline gap-x-1">
+          <!-- Price, update based on frequency toggle state -->
+          <span class="text-4xl font-bold tracking-tight text-white">$48</span>
+          <!-- Payment frequency, update based on frequency toggle state -->
+          <span class="text-sm font-semibold leading-6 text-gray-300"
+            >/month</span
+          >
+        </p>
+        <a
+          href="#"
+          aria-describedby="tier-enterprise"
+          class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white"
+          >Buy plan</a
+        >
+        <ul
+          role="list"
+          class="mt-8 space-y-3 text-sm leading-6 text-gray-300 xl:mt-10"
+        >
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Unlimited products
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Unlimited subscribers
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Advanced analytics
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            1-hour, dedicated support response time
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Marketing automations
+          </li>
+
+          <li class="flex gap-x-3">
+            <svg
+              class="h-6 w-5 flex-none text-white"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Custom reporting tools
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Logo-->
+<div class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div
+      class="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:grid-cols-5"
+    >
+      <!-- <img
+        class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+        src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg"
+        alt="Tuple"
+        width="158"
+        height="48"
+      /> -->
+      <img
+        src="https://logowik.com/content/uploads/images/solana-sol9611.jpg"
+        alt=""
+        class="col-span-2 h-12 w-full object-contain lg:col-span-1"
+      />
+      <img
+        class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
+        src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg"
+        alt="SavvyCal"
+        width="158"
+        height="48"
+      />
+      <img
+        class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
+        src="../../../assets/images/candypay-logo.svg"
+        alt=""
+      />
+      <!-- <img
+        class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
+        src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg"
+        alt="Statamic"
+        width="258"
+        height="148"
+      /> -->
+      <img
+        src="https://logowik.com/content/uploads/images/solana-sol9611.jpg"
+        alt=""
+        class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+      />
+    </div>
+    <div class="mt-16 flex justify-center">
+      <p
+        class="relative rounded-full bg-gray-50 px-4 py-1.5 text-sm leading-6 text-gray-600 ring-1 ring-inset ring-gray-900/5"
+      >
+        <span class="hidden md:inline"
+          >Over 2500 companies use our tools to better their business.</span
+        >
+        <a href="#" class="font-semibold text-indigo-600"
+          ><span class="absolute inset-0" aria-hidden="true"></span> Read our
+          customer stories <span aria-hidden="true">&rarr;</span></a
+        >
+      </p>
+    </div>
   </div>
 </div>

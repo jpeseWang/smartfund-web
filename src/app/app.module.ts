@@ -13,7 +13,8 @@ import { HomeComponent } from './components/home/home.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthInterceptor } from './interceptors';
-
+import { FundingPopupComponent } from './components/funding-popup/funding-popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AuthInterceptor } from './interceptors';
     NavbarComponent,
     FooterComponent,
     MovieComponent,
+    FundingPopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ import { AuthInterceptor } from './interceptors';
     FormsModule,
     HttpClientModule,
     FontAwesomeModule,
+    MatDialogModule,
   ],
   providers: [
     {
