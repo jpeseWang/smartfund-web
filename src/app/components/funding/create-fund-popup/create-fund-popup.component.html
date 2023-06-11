@@ -124,6 +124,14 @@
       color="primary"
       [disabled]="!title || !content"
       [mat-dialog-close]="true"
+      (click)="
+        createFund(
+          amount.value,
+          minAmount.value,
+          maxAmount.value,
+          comment.value
+        )
+      "
       class="inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium leading-5 text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
     >
       Fund

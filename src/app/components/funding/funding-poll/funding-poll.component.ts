@@ -10,6 +10,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
   styleUrls: ['./funding-poll.component.css'],
 })
 export class FundingPollComponent implements OnInit {
+  routeId: string = '';
   fundingPoll: any;
   options: any[] = [];
 
@@ -22,6 +23,7 @@ export class FundingPollComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       const id = params['id'];
+      this.routeId = id;
 
       this.fundingService.getPollById(id).subscribe((res) => {
         console.log(res);
@@ -49,6 +51,9 @@ export class FundingPollComponent implements OnInit {
       },
       content: {
         text: 'Please provide the details for your project.',
+      },
+      id: {
+        id: this.routeId,
       },
     };
 
