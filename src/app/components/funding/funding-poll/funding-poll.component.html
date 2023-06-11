@@ -1,14 +1,40 @@
-{{ this.fundingPoll.title }}
+<div class="px-4">
+  <h1 class="text-3xl text-gray-700 px-2 py-2 font-bold">
+    {{ this.fundingPoll.title }}
+  </h1>
+  <br />
+  <div
+    *ngFor="let option of this.options"
+    class="bg-gray-100 rounded-2xl px-4 py-4 w-1/2 my-6"
+  >
+    <h2 class="border-b-2">Total amount: {{ option.total }} $</h2>
+    <h2 class="text-purple-400 border-b-2">
+      Min Target: {{ option.minTarget }} $
+    </h2>
+    <h2 class="text-purple-400 border-b-2">
+      Max Target: {{ option.maxTarget }} $
+    </h2>
+    <div
+      *ngFor="let donator of option.donators"
+      class="bg-indigo-100 w-1/2 rounded-2xl px-4"
+    >
+      <h3 class="text-blue-400">
+        Donator ID: {{ donator.donatorId | slice : 0 : 12 }}
+      </h3>
+      <p>Donator amount: {{ donator.amount }} $</p>
+      <p class="text-grey-300">Comment: {{ donator.comment }}</p>
+    </div>
 
-<p>---------------</p>
-<div *ngFor="let option of this.options">
-  {{ option.total }}
-  <p>{{ option.minTarget }}</p>
-  <p>{{ option.maxTarget }}</p>
-  <div *ngFor="let donator of option.donators">
-    <p>{{ donator.donatorId }}</p>
-    <p>{{ donator.amount }}</p>
-    <p>{{ donator.comment }}</p>
+    <h4
+      [class]="
+        'text-green-700 font-medium text-medium ' +
+        (option.status === 'unfinished' ? 'text-yellow-700' : 'finished')
+      "
+      class="font-semibold border-t-2"
+    >
+      Status: {{ option.status }}
+    </h4>
+    <div class="bg-white w-4 h-auto"></div>
+    <br />
   </div>
-  <p>{{ option.status }}</p>
 </div>
