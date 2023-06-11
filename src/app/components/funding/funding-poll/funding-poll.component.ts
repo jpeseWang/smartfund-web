@@ -17,7 +17,8 @@ export class FundingPollComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public poll: any,
     private fundingService: FundingService,
     private route: ActivatedRoute,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    public dialogRef: MatDialogRef<FundingPollComponent>
   ) {}
 
   ngOnInit(): void {

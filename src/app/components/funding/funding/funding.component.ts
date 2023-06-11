@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { FundingService } from '../../../services';
 import { CreatePollPopupComponent } from '../create-poll-popup/create-poll-popup.component';
 import { FundingPollComponent } from '../funding-poll/funding-poll.component';
+import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-funding',
   templateUrl: './funding.component.html',

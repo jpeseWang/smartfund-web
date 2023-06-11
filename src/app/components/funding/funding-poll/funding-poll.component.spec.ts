@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FundingPollComponent } from './funding-poll.component';
 
 describe('FundingPollComponent', () => {
@@ -8,7 +7,7 @@ describe('FundingPollComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FundingPollComponent]
+      declarations: [FundingPollComponent],
     });
     fixture = TestBed.createComponent(FundingPollComponent);
     component = fixture.componentInstance;
