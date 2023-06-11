@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FundingService } from '../../../services';
 import { ActivatedRoute } from '@angular/router';
-
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { CreateFundPopupComponent } from '../create-fund-popup/create-fund-popup.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 @Component({
   selector: 'app-funding-poll',
   templateUrl: './funding-poll.component.html',
@@ -9,10 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FundingPollComponent implements OnInit {
   fundingPoll: any;
+  polls: any[] = [];
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) public poll: any,
     private fundingService: FundingService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -25,5 +30,12 @@ export class FundingPollComponent implements OnInit {
         this.fundingPoll = res.data;
       });
     });
+  }
+  openFund() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '500px';
+    this.dialog.open(CreateFundPopupComponent, dialogConfig);
   }
 }

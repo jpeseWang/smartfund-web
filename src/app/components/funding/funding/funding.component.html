@@ -1,76 +1,81 @@
-<div class="nft-card">
-  <a
-    ><button
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-5 rounded items-end my-3 ml-auto"
+<div
+  style="
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+    padding-top: 30px;
+  "
+>
+  <a>
+    <button
+      class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
       (click)="openPoll()"
     >
-      New
-    </button></a
-  >
-  <div class="nft-card">
-    <div *ngFor="let poll of this.fundingPolls">
-      <a [routerLink]="poll.id">
-        <div class="nft-card nft-card--locked">
-          <div class="nft-card--header">
-            <div class="nft-user">
-              <img
-                src="https://cdn2.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/d.jpg?width=720"
-              />
-              <p>{{ poll.title }}</p>
-              <span>Creator ID: {{ poll.creatorId | slice : 0 : 12 }} </span>
-            </div>
+      Create new Poll
+    </button>
+  </a>
+</div>
+
+<main class="main">
+  <div class="responsive-wrapper">
+    <div class="content cart">
+      <div class="content-main">
+        <div class="card-grid">
+          <div *ngFor="let poll of this.fundingPolls">
+            <article class="card">
+              <div class="card-header">
+                <img
+                  src="https://vcdn-sohoa.vnecdn.net/2022/03/08/bored-ape-nft-accidental-0-728-5490-8163-1646708401.jpg"
+                />
+
+                <label class="toggle">
+                  <input type="checkbox" checked />
+                  <span></span>
+                </label>
+              </div>
+              <div class="card-body block">
+                <h2 class="bold text-lg block">
+                  {{ poll.title | slice : 0 : 22 }}
+                </h2>
+                <p>
+                  <i class="fa fa-user" aria-hidden="true"></i> Creator ID:
+                  {{ poll.creatorId | slice : 0 : 12 }}
+                </p>
+                <p>
+                  <i class="far fa-clock"></i> Deadline: {{ poll.deadline }}
+                </p>
+                <a href="#" class="price font-medium block"
+                  >Milestone: {{ poll.milestone }} $</a
+                >
+              </div>
+              <div class="card-footer ml-1 flex">
+                <button
+                  class="bg-white hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-200 rounded shadow mr-auto"
+                  (click)="openPoll(poll)"
+                >
+                  Details
+                </button>
+                <button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </article>
           </div>
-
-          <div class="nft-card--content">
-            <div class="nft-action">
-              <span> <i class="far fa-comment"></i></span>
-              <span> <i class="far fa-heart"></i></span>
-            </div>
-
-            <img
-              src="https://i.pinimg.com/originals/4a/e9/e5/4ae9e55b5b2d8730017cb33615b56609.jpg"
-            />
-
-            <div class="nft-qrcode">
-              001
-              <span>/250</span>
-              <i class="fas fa-qrcode"></i>
-            </div>
-
-            <div class="nft-description text-white">
-              <p>{{ poll.description }}</p>
-            </div>
-
-            <div class="nft-unlock">
-              <input
-                type="button"
-                class="btn btn--primary"
-                value="FUND"
-                (click)="openFund()"
-              />
-            </div>
-          </div>
-          <div class="nft-card--footer">
-            <div class="nft-price">
-              <!-- <span>($803.39)</span> -->
-              <img
-                src="https://cryptologos.cc/logos/solana-sol-logo.png?v=025"
-                alt=""
-                width="10%"
-                height="10%"
-              />
-              <p>{{ poll.milestone }} SOL</p>
-            </div>
-            <div class="nft-time">
-              <span
-                ><i class="far fa-clock"></i> Deadline:
-                {{ poll.deadline }}</span
-              >
-            </div>
-          </div>
-        </div></a
-      >
-      <div class="nft-profile--footer"></div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</main>

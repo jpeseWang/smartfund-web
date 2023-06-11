@@ -2,7 +2,7 @@
   mat-dialog-title
   class="text-indigo-600 text-xl font-bold {{ data.title.color }}"
 >
-  {{ data.title.text }}
+  Enter your Fund recommendation
 </h2>
 
 <div mat-dialog-content>
@@ -10,21 +10,21 @@
     <label
       for="title"
       class="block text-base font-medium leading-6 text-gray-900"
-      >Title</label
+      >Amount</label
     >
     <input
-      id="title"
       matInput
-      placeholder="Enter a title"
+      placeholder="Enter amount"
       required
       class="w-full p-2 border border-gray-300 rounded px-3 text-gray-500 sm:text-sm"
+      #amount
     />
   </div>
   <div class="mb-4">
     <label
       for="title"
       class="block text-base font-medium leading-6 text-gray-900"
-      >Milestone</label
+      >Min amount:</label
     >
     <input
       id="title"
@@ -32,20 +32,52 @@
       placeholder="Enter your target $$"
       required
       class="w-full p-2 border border-gray-300 rounded px-3 text-gray-500 sm:text-sm"
+      #minAmount
     />
   </div>
   <div class="mb-4">
     <label
       for="title"
       class="block text-base font-medium leading-6 text-gray-900"
-      >Your recommend Deadline</label
+      >Max amount:</label
     >
+    <input
+      id="title"
+      matInput
+      placeholder="Enter your target $$"
+      required
+      class="w-full p-2 border border-gray-300 rounded px-3 text-gray-500 sm:text-sm"
+      #maxAmount
+    />
+  </div>
+  <div class="mb-4">
+    <label
+      for="title"
+      class="block text-base font-medium leading-6 text-gray-900"
+      >Period</label
+    >
+    <!-- <input
+      matInput
+      [matDatepicker]="picker"
+      (dateChange)="dateChanged($event)"
+    />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker> -->
 
     <mat-form-field>
-      <mat-label>Enter a date range</mat-label>
+      <mat-label>Enter start day and end day</mat-label>
       <mat-date-range-input [rangePicker]="picker">
-        <input matStartDate placeholder="Start date" />
-        <input matEndDate placeholder="End date" />
+        <input
+          matStartDate
+          placeholder="Start date"
+          (dateChange)="dateChanged($event)"
+        />
+        <input
+          matEndDate
+          placeholder="End date"
+          (dateChange)="dateChanged($event)"
+        />
       </mat-date-range-input>
       <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle
@@ -69,6 +101,7 @@
       rows="4"
       required
       class="w-full p-2 border border-gray-300 rounded px-3 text-gray-500 sm:text-sm"
+      #comment
     ></textarea>
   </div>
 
@@ -90,9 +123,11 @@
       mat-raised-button
       color="primary"
       [disabled]="!title || !content"
+      [mat-dialog-close]="true"
       class="inline-flex justify-center px-4 py-2 ml-3 text-sm font-medium leading-5 text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600"
+      (click)="createFund(title.value, milestone.value, description.value)"
     >
-      Create
+      Fund
     </button>
   </div>
 </div>
