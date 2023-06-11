@@ -12,28 +12,41 @@
         class="focus:outline-none text-white text-3xl bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-10 py-5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
         (click)="openDialog()"
       >
-        Fund now
+        Fund now!
       </button>
     </a>
   </div>
-  <h1 class="text-3xl text-gray-700 px-2 py-2 font-bold">
+  <h1
+    class="text-3xl text-gray-700 px-4 py-4 bg-amber-50 rounded-2xl w-8/12 font-bold"
+  >
     <p class="text-blue-700">{{ this.fundingPoll.title }}</p>
-    <p>Milestone: {{ this.fundingPoll.milestone }} $</p>
-    <p>Deadline: {{ this.fundingPoll.deadline }}</p>
-    <p class="text-gray-500">Description: {{ this.fundingPoll.description }}</p>
+    <div class="text-base inline">
+      Milestone:
+      <p class="text-blue-400">{{ this.fundingPoll.milestone }} $</p>
+    </div>
+    <div class="text-base inline">
+      Deadline:
+      <p class="text-blue-400">{{ this.fundingPoll.deadline }}</p>
+    </div>
+    <div class="text-base inline">
+      Description:
+      <p class="text-gray-500">{{ this.fundingPoll.description }}</p>
+    </div>
   </h1>
   <br />
   <div
     *ngFor="let option of this.options"
     class="bg-gray-100 rounded-2xl px-4 py-4 w-1/2 my-6"
   >
-    <h2 class="border-b-2">Total amount: {{ option.total }} $</h2>
-    <h2 class="text-purple-400 border-b-2">
+    <h2 class="border-b-2 text-purple-400">
+      Total amount: {{ option.total }} $
+    </h2>
+    <h3 class="text-gray-500 border-b-2">
       Min Target: {{ option.minTarget }} $
-    </h2>
-    <h2 class="text-purple-400 border-b-2">
+    </h3>
+    <h3 class="text-gray-500 border-b-2">
       Max Target: {{ option.maxTarget }} $
-    </h2>
+    </h3>
     <div
       *ngFor="let donator of option.donators"
       class="bg-indigo-100 w-1/2 rounded-2xl px-4"
