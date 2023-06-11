@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="px-2">
   <div class="header py-3 px-3">
     <button
@@ -37,4 +38,19 @@
       FUND now!
     </button>
   </mat-dialog-actions>
+=======
+{{ this.fundingPoll.title }}
+
+<p>---------------</p>
+<div *ngFor="let option of this.options">
+  {{ option.total }}
+  <p>{{ option.minTarget }}</p>
+  <p>{{ option.maxTarget }}</p>
+  <div *ngFor="let donator of option.donators">
+    <p>{{ donator.donatorId }}</p>
+    <p>{{ donator.amount }}</p>
+    <p>{{ donator.comment }}</p>
+  </div>
+  <p>{{ option.status }}</p>
+>>>>>>> Stashed changes
 </div>

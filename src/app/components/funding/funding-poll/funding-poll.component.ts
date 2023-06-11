@@ -11,7 +11,11 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 })
 export class FundingPollComponent implements OnInit {
   fundingPoll: any;
+<<<<<<< Updated upstream
   polls: any[] = [];
+=======
+  options: any[] = [];
+>>>>>>> Stashed changes
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public poll: any,
@@ -29,6 +33,12 @@ export class FundingPollComponent implements OnInit {
         console.log(res);
 
         this.fundingPoll = res.data;
+      });
+
+      this.fundingService.getAvailOptions(id).subscribe((res) => {
+        console.log(res);
+
+        this.options = [...res.data.options];
       });
     });
   }
