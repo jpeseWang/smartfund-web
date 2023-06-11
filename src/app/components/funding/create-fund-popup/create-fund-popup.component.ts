@@ -12,7 +12,8 @@ export class CreateFundPopupComponent {
   title: string;
   content: string;
   responseStatus: number | null = null;
-
+  minDeadline = '';
+  maxDeadline = '';
   constructor(
     public dialogRef: MatDialogRef<CreateFundPopupComponent>,
     private http: HttpClient,
@@ -22,6 +23,13 @@ export class CreateFundPopupComponent {
     this.title = data.title.text;
     this.content = data.content.text;
   }
+  minDLChanged($event: any) {
+    this.minDeadline = $event.target.value.toISOString();
+  }
+  maxDLChanged($event: any) {
+    this.maxDeadline = $event.target.value.toISOString();
+  }
+
   createFund(
     amount: string,
     minAmount: string,
