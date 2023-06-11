@@ -2,7 +2,7 @@
   <div class="header py-3 px-3">
     <button
       class="bg-white hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-200 rounded shadow ml-auto flex relative"
-      [mat-dialog-close]="{ name: product.name, price: product.price }"
+      [mat-dialog-close]="true"
     >
       X
     </button>
@@ -32,6 +32,7 @@
     <button
       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex ml-auto translate-y-1.5"
       (click)="openFund()"
+      [mat-dialog-close]="true"
     >
       FUND now!
     </button>

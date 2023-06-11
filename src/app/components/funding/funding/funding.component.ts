@@ -7,12 +7,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-funding',
   templateUrl: './funding.component.html',
-  styleUrls: [
-    './funding.component.scss',
-    './child1.scss',
-    './child2.scss',
-    './child3.scss',
-  ],
+  styleUrls: ['./funding.component.scss'],
 })
 export class FundingComponent implements OnInit {
   activeTab: string = 'shop';
