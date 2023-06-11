@@ -10,9 +10,6 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./funding.component.scss'],
 })
 export class FundingComponent implements OnInit {
-  activeTab: string = 'shop';
-  products: any[] = [];
-
   fundingPolls: any[] = [];
 
   constructor(
@@ -23,6 +20,7 @@ export class FundingComponent implements OnInit {
   ngOnInit(): void {
     this.fundingService.getAllPolls().subscribe((res) => {
       this.fundingPolls = res.data;
+      console.log(res);
     });
   }
 
@@ -32,14 +30,5 @@ export class FundingComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.width = '500px';
     this.dialog.open(CreatePollPopupComponent, dialogConfig);
-  }
-
-  openFundDetails(poll: any) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    dialogConfig.width = '500px';
-    dialogConfig.data = poll;
-    this.dialog.open(FundingPollComponent, dialogConfig);
   }
 }

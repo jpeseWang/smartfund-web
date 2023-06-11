@@ -11,18 +11,11 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 })
 export class FundingPollComponent implements OnInit {
   fundingPoll: any;
-<<<<<<< Updated upstream
-  polls: any[] = [];
-=======
   options: any[] = [];
->>>>>>> Stashed changes
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public poll: any,
     private fundingService: FundingService,
-    private route: ActivatedRoute,
-    private dialog: MatDialog,
-    public dialogRef: MatDialogRef<FundingPollComponent>
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -42,11 +35,11 @@ export class FundingPollComponent implements OnInit {
       });
     });
   }
+
   openFund() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '500px';
-    this.dialog.open(CreateFundPopupComponent, dialogConfig);
   }
 }

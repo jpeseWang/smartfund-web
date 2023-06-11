@@ -39,17 +39,18 @@
                 <p>
                   <i class="far fa-clock"></i> Deadline: {{ poll.deadline }}
                 </p>
-                <a href="#" class="price font-medium block"
+                <a class="price font-medium block"
                   >Milestone: {{ poll.milestone }} $</a
                 >
               </div>
               <div class="card-footer ml-1 flex">
-                <button
-                  class="bg-white hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-200 rounded shadow mr-auto"
-                  (click)="openFundDetails(poll)"
-                >
-                  Details
-                </button>
+                <a [routerLink]="poll.id">
+                  <button
+                    class="bg-white hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-200 rounded shadow mr-auto"
+                  >
+                    Details
+                  </button>
+                </a>
                 <button>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
