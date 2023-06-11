@@ -25,6 +25,5 @@ import { FundingRoutingModule } from './funding.routing';
     MatFormFieldModule,
     MatNativeDateModule,
   ],
-  entryComponents: [FundingPollComponent],
 })
 export class FundingModule {}
